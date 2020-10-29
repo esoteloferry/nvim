@@ -1,0 +1,27 @@
+{
+  // resolve workspace folder
+  "coc.preferences.rootPatterns": [
+    ".git",
+    ".gitignore",
+    ".env"
+  ],
+  // format on save
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "markdown",
+    "javascript",
+    "html",
+    "yaml",
+    "json",
+    "python",
+    "yaml"
+  ],
+  // python config
+  "python.linting.enabled": true,
+  "python.formatting.provider": "autopep8",
+  "python.linting.pylintEnabled": true,
+  "snippets.ultisnips.directories": [
+    "UltiSnips",
+    "~/.config/nvim/utils/snips"
+  ]
+}
