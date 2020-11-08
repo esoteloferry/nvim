@@ -36,7 +36,7 @@ set scrolloff=7                         " Offset lines in the bottom of file
 " Search with / insensitive
 set ignorecase
 set smartcase
-set autochdir                           " Your working directory will always
+" set autochdir                           " Your working directory will always
 "be the same as your working directory, useful to floaterm too
 "
 "au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm

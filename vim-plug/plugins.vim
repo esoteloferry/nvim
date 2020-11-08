@@ -30,5 +30,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'tpope/vim-fugitive'
   " Smooth scroll
   Plug 'psliwka/vim-smoothie'
+  " Svelte
+  Plug 'leafOfTree/vim-svelte-plugin'
   call plug#end()
 

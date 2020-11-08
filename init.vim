@@ -10,8 +10,10 @@ source ~/.config/nvim/vim-plug/plugins.vim
 source ~/.config/nvim/plug-config/coc.vim
 "Don't forget to install extensions
 ":CocInstall coc-json coc-python coc-snippets coc-vimlsp coc-tsserver\
-"coc-yaml
-
+"coc-yaml coc-go coc-svelte
+" There is a problem with coc-svelte, you should install :
+"cd ~/.config/coc/extensions/node_modules/coc-svelte
+"npm i -D typescript
 "Airline
 source ~/.config/nvim/themes/airline.vim
 "Sneak
@@ -30,3 +32,5 @@ source ~/.config/nvim/scripts/floatermAutoload.vim
 "files and change to its folder so pwd is modified and
 "floaterm is not initiated in the correct path
 source ~/.config/nvim/scripts/sessionAutoload.vim
+"Svelte
+source ~/.config/nvim/plug-config/svelte.vim
