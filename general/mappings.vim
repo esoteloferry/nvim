@@ -27,6 +27,7 @@ tnoremap <Esc> <C-\><C-n>
 noremap <Leader>s :w<CR>
 noremap <Leader>w :bd<CR>
 noremap <Leader>q :q<CR>
+noremap <Leader>qq :qa<CR>
 noremap <silent> <Leader>g :GFiles<CR>
 " Folding
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
