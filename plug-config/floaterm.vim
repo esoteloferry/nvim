@@ -9,7 +9,7 @@ let g:floaterm_position='bottom'
 "let g:startify_change_to_dir = 1
 "let g:startify_change_to_vcs_root = 1
 " Mappings
-noremap <Leader>, :FloatermNew<CR>
-noremap <Leader>p :FloatermNew python3<CR>
-noremap <Leader>n :FloatermNew node<CR>
+" noremap <Leader>, :FloatermNew<CR>
+" noremap <Leader>p :FloatermNew python3<CR>
+" noremap <Leader>n :FloatermNew node<CR>
 noremap <Leader>t :FloatermToggle<CR>
