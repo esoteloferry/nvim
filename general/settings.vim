@@ -44,3 +44,6 @@ set smartcase
 "
 "" You can't stop me
 "cmap w!! w !sudo tee %
+" Prevent loading netrw (hate it!!!)
+let g:loaded_netrw       = 1
+let g:loaded_netrwPlugin = 1
