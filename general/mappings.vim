@@ -32,3 +32,5 @@ noremap <silent> <Leader>g :GFiles<CR>
 " Folding
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 nnoremap <silent> <Space><Space> zA
+nnoremap <silent> <Leader>r zr
+nnoremap <silent> <Leader>m zm
