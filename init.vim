@@ -22,6 +22,8 @@ source ~/.config/nvim/plug-config/sneak.vim
 source ~/.config/nvim/plug-config/floaterm.vim
 "Commenter
 source ~/.config/nvim/plug-config/commenter.vim
+"Fugitive
+source ~/.config/nvim/plug-config/fugitive.vim
 "Themes
 "source ~/.config/nvim/themes/onedark.vim
 source ~/.config/nvim/themes/gruvbox.vim
