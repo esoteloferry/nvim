@@ -14,7 +14,8 @@
     "yaml",
     "json",
     "python",
-    "yaml"
+    "yaml",
+    "go"
   ],
   // python config
   "python.linting.enabled": true,
