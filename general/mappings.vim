@@ -34,3 +34,6 @@ nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 nnoremap <silent> <Space><Space> zA
 nnoremap <silent> <Leader>r zr
 nnoremap <silent> <Leader>m zm
+" Test & run any code (for that tetrun is a bash containing the commands you
+" use to test, or test and run, or just run the code you are working on)
+nnoremap <Leader>, :FloatermToggle<CR>./testrun<CR>
