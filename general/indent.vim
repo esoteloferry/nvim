@@ -1,4 +1,4 @@
-"filetype plugin indent on
+filetype plugin indent on
 "filetype off
 
 autocmd FileType javascript setlocal expandtab tabstop=2 shiftwidth=2

@@ -14,12 +14,9 @@
     "yaml",
     "json",
     "python",
-    "yaml"
+    "yaml",
+    "go"
   ],
-  // python config
-  "python.linting.enabled": true,
-  "python.formatting.provider": "autopep8",
-  "python.linting.pylintEnabled": true,
   "snippets.ultisnips.directories": [
     "UltiSnips",
     "~/.config/nvim/utils/snips"

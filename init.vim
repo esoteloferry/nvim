@@ -9,7 +9,7 @@ source ~/.config/nvim/vim-plug/plugins.vim
 "Intellisense
 source ~/.config/nvim/plug-config/coc.vim
 "Don't forget to install extensions
-":CocInstall coc-json coc-python coc-snippets coc-vimlsp coc-tsserver\
+":CocInstall coc-json coc-pyright coc-snippets coc-vimlsp coc-tsserver\
 "coc-yaml coc-go coc-svelte
 " There is a problem with coc-svelte, you should install :
 "cd ~/.config/coc/extensions/node_modules/coc-svelte
@@ -22,6 +22,8 @@ source ~/.config/nvim/plug-config/sneak.vim
 source ~/.config/nvim/plug-config/floaterm.vim
 "Commenter
 source ~/.config/nvim/plug-config/commenter.vim
+"Fugitive
+source ~/.config/nvim/plug-config/fugitive.vim
 "Themes
 "source ~/.config/nvim/themes/onedark.vim
 source ~/.config/nvim/themes/gruvbox.vim
