@@ -31,4 +31,5 @@ noremap <Leader>qq :qa<CR>
 noremap <silent> <Leader>g :GFiles<CR>
 " Folding
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+"Fold/unfold everything in current class
 nnoremap <silent> <Space><Space> zA
