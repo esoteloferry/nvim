@@ -18,8 +18,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " FZF
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
-  " Goyo
-  Plug 'junegunn/goyo.vim'
   " Vim-sneak
   Plug 'justinmk/vim-sneak'
   " NerdCommenter
