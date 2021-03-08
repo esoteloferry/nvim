@@ -8,7 +8,7 @@ source ~/.config/nvim/general/mappings.vim
 "source ~/.config/nvim/themes/gruvbox.vim
 "Plugins
 source ~/.config/nvim/vim-plug/plugins.vim
-colorscheme papercolor
+colorscheme PaperColor
 
 "Intellisense
 source ~/.config/nvim/plug-config/coc.vim
