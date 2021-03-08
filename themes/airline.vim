@@ -1,3 +1,8 @@
+" let g:airline#extensions#fzf#enabled = 1
+" let g:airline#extensions#hunks#enabled = 1
+" let g:airline#extensions#fugitiveline#enabled = 1
+" enable coc integration
+" let g:airline#extensions#coc#enabled = 1
 " enable tabline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
@@ -12,7 +17,7 @@ let g:airline_powerline_fonts = 1
 " let g:airline_right_sep = ''
 
 " Switch to your current theme
-let g:airline_theme = 'onedark'
+let g:airline_theme = 'papercolor'
 " Always show tabs
 set showtabline=2
 
@@ -27,4 +32,7 @@ set noshowmode
 "   let g:airline_section_y = airline#section#create(['%B'])
 "   let g:airline_section_z = airline#section#create_right(['%l'])
 " endfunction
-" autocmd VimEnter * call AirlineInit()
+function! AirlineInit()
+  silent! AirlineRefresh
+endfunction
+autocmd VimEnter * call AirlineInit()

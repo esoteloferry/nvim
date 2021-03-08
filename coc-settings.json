@@ -1,10 +1,6 @@
 {
   // resolve workspace folder
-  "coc.preferences.rootPatterns": [
-    ".git",
-    ".gitignore",
-    ".env"
-  ],
+  "coc.preferences.rootPatterns": [".git", ".gitignore", ".env"],
   // format on save
   "coc.preferences.formatOnSaveFiletypes": [
     "css",
@@ -15,10 +11,12 @@
     "json",
     "python",
     "yaml",
-    "go"
+    "go",
+    "typescript"
   ],
-  "snippets.ultisnips.directories": [
-    "UltiSnips",
-    "~/.config/nvim/utils/snips"
-  ]
+  "prettier.trailingComma": "es5",
+  "prettier.tabWidth": 4,
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "snippets.ultisnips.directories": ["UltiSnips", "~/.config/nvim/utils/snips"]
 }

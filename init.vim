@@ -3,14 +3,18 @@ source ~/.config/nvim/general/indent.vim
 source ~/.config/nvim/general/python.vim
 source ~/.config/nvim/general/mappings.vim
 
+"Themes
+"source ~/.config/nvim/themes/onedark.vim
+"source ~/.config/nvim/themes/gruvbox.vim
 "Plugins
 source ~/.config/nvim/vim-plug/plugins.vim
+colorscheme papercolor
 
 "Intellisense
 source ~/.config/nvim/plug-config/coc.vim
 "Don't forget to install extensions
 ":CocInstall coc-json coc-pyright coc-snippets coc-vimlsp coc-tsserver\
-"coc-yaml coc-go coc-svelte
+"coc-yaml coc-go coc-svelte coc-prettier
 " There is a problem with coc-svelte, you should install :
 "cd ~/.config/coc/extensions/node_modules/coc-svelte
 "npm i -D typescript
@@ -24,9 +28,6 @@ source ~/.config/nvim/plug-config/floaterm.vim
 source ~/.config/nvim/plug-config/commenter.vim
 "Fugitive
 source ~/.config/nvim/plug-config/fugitive.vim
-"Themes
-"source ~/.config/nvim/themes/onedark.vim
-source ~/.config/nvim/themes/gruvbox.vim
 
 "Scripts
 source ~/.config/nvim/scripts/floatermAutoload.vim

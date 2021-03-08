@@ -10,6 +10,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " Themes
   Plug 'joshdick/onedark.vim'
   Plug 'morhetz/gruvbox'
+  Plug 'NLKNguyen/papercolor-theme'
   " Status line
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
