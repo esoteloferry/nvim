@@ -14,7 +14,7 @@ colorscheme PaperColor
 source ~/.config/nvim/plug-config/coc.vim
 "Don't forget to install extensions
 ":CocInstall coc-json coc-pyright coc-snippets coc-vimlsp coc-tsserver\
-"coc-yaml coc-go coc-svelte coc-prettier
+"coc-yaml coc-go coc-svelte 
 " There is a problem with coc-svelte, you should install :
 "cd ~/.config/coc/extensions/node_modules/coc-svelte
 "npm i -D typescript
@@ -24,11 +24,12 @@ source ~/.config/nvim/themes/airline.vim
 source ~/.config/nvim/plug-config/sneak.vim
 "Floaterm
 source ~/.config/nvim/plug-config/floaterm.vim
+"Context_filetype
+source ~/.config/nvim/plug-config/context.vim
 "Commenter
 source ~/.config/nvim/plug-config/commenter.vim
 "Fugitive
 source ~/.config/nvim/plug-config/fugitive.vim
-
 "Scripts
 source ~/.config/nvim/scripts/floatermAutoload.vim
 "session autoload should be at the end, because it loads 
@@ -37,3 +38,5 @@ source ~/.config/nvim/scripts/floatermAutoload.vim
 source ~/.config/nvim/scripts/sessionAutoload.vim
 "Svelte
 source ~/.config/nvim/plug-config/svelte.vim
+"Prettier
+source ~/.config/nvim/plug-config/prettier.vim
