@@ -18,7 +18,6 @@
     "go",
     "typescript"
   ],
-  //Prettier
   "prettier.trailingComma": "es5",
   "prettier.tabWidth": 4,
   "prettier.semi": false,
@@ -32,4 +31,5 @@
     "UltiSnips",
     "~/.config/nvim/utils/snips"
   ]
+  "coc.preferences.extensionUpdateCheck": "daily"
 }

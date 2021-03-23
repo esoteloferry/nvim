@@ -22,6 +22,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " Vim-sneak
   Plug 'justinmk/vim-sneak'
   " NerdCommenter
+  Plug 'Shougo/context_filetype.vim'
   Plug 'preservim/nerdcommenter'
   " Floaterm
   Plug 'voldikss/vim-floaterm'
@@ -31,5 +32,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'psliwka/vim-smoothie'
   " Svelte
   Plug 'leafOfTree/vim-svelte-plugin'
+  Plug 'codechips/coc-svelte', {'do':'npm install'}
+  "Prettier
+  Plug 'prettier/vim-prettier', {
+    \ 'do': 'npm install'
+    \ }
   call plug#end()
 
