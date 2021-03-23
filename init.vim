@@ -39,4 +39,4 @@ source ~/.config/nvim/scripts/sessionAutoload.vim
 "Svelte
 source ~/.config/nvim/plug-config/svelte.vim
 "Prettier
-source ~/.config/nvim/plug-config/prettier.vim
+" source ~/.config/nvim/plug-config/prettier.vim
