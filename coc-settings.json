@@ -1,6 +1,10 @@
 {
   // resolve workspace folder
-  "coc.preferences.rootPatterns": [".git", ".gitignore", ".env"],
+  "coc.preferences.rootPatterns": [
+    ".git",
+    ".gitignore",
+    ".env"
+  ],
   // format on save
   "coc.preferences.formatOnSaveFiletypes": [
     "css",
@@ -14,9 +18,18 @@
     "go",
     "typescript"
   ],
+  //Prettier
   "prettier.trailingComma": "es5",
   "prettier.tabWidth": 4,
   "prettier.semi": false,
   "prettier.singleQuote": true,
-  "snippets.ultisnips.directories": ["UltiSnips", "~/.config/nvim/utils/snips"]
+  //coc-go
+  "go.goplsOptions": {
+    "completeUnimported": true,
+    "hoverKind": "Structured"
+  },
+  "snippets.ultisnips.directories": [
+    "UltiSnips",
+    "~/.config/nvim/utils/snips"
+  ]
 }

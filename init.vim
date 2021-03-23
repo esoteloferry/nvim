@@ -8,7 +8,7 @@ source ~/.config/nvim/general/mappings.vim
 "source ~/.config/nvim/themes/gruvbox.vim
 "Plugins
 source ~/.config/nvim/vim-plug/plugins.vim
-colorscheme papercolor
+colorscheme PaperColor
 
 "Intellisense
 source ~/.config/nvim/plug-config/coc.vim
@@ -37,3 +37,5 @@ source ~/.config/nvim/scripts/floatermAutoload.vim
 source ~/.config/nvim/scripts/sessionAutoload.vim
 "Svelte
 source ~/.config/nvim/plug-config/svelte.vim
+"Go
+source ~/.config/nvim/plug-config/coc-go.vim
