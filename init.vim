@@ -40,3 +40,5 @@ source ~/.config/nvim/scripts/sessionAutoload.vim
 source ~/.config/nvim/plug-config/svelte.vim
 "Go
 source ~/.config/nvim/plug-config/coc-go.vim
+"Prettier
+" source ~/.config/nvim/plug-config/prettier.vim

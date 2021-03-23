@@ -18,18 +18,6 @@
     "go",
     "typescript"
   ],
-  "prettier.trailingComma": "es5",
-  "prettier.tabWidth": 4,
-  "prettier.semi": false,
-  "prettier.singleQuote": true,
-  //coc-go
-  "go.goplsOptions": {
-    "completeUnimported": true,
-    "hoverKind": "Structured"
-  },
-  "snippets.ultisnips.directories": [
-    "UltiSnips",
-    "~/.config/nvim/utils/snips"
-  ]
+  "snippets.ultisnips.directories": ["UltiSnips", "~/.config/nvim/utils/snips"],
   "coc.preferences.extensionUpdateCheck": "daily"
 }

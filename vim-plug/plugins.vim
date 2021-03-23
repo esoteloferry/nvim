@@ -34,8 +34,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'leafOfTree/vim-svelte-plugin'
   Plug 'codechips/coc-svelte', {'do':'npm install'}
   "Prettier
-  Plug 'prettier/vim-prettier', {
-    \ 'do': 'npm install'
-    \ }
+  " Plug 'prettier/vim-prettier', {
+  "   \ 'do': 'npm install'
+  "   \ }
   call plug#end()
 
