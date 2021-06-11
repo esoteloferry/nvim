@@ -1,6 +1,10 @@
 {
   // resolve workspace folder
-  "coc.preferences.rootPatterns": [".git", ".gitignore", ".env"],
+  "coc.preferences.rootPatterns": [
+    ".git",
+    ".gitignore",
+    ".env"
+  ],
   // format on save
   "coc.preferences.formatOnSaveFiletypes": [
     "css",

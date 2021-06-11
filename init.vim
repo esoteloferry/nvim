@@ -38,5 +38,7 @@ source ~/.config/nvim/scripts/floatermAutoload.vim
 source ~/.config/nvim/scripts/sessionAutoload.vim
 "Svelte
 source ~/.config/nvim/plug-config/svelte.vim
+"Go
+source ~/.config/nvim/plug-config/coc-go.vim
 "Prettier
 " source ~/.config/nvim/plug-config/prettier.vim
