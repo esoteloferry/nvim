@@ -14,7 +14,7 @@ colorscheme PaperColor
 source ~/.config/nvim/plug-config/coc.vim
 "Don't forget to install extensions
 ":CocInstall coc-json coc-pyright coc-snippets coc-vimlsp coc-tsserver\
-"coc-yaml coc-go coc-svelte 
+"coc-yaml coc-go coc-svelte coc-prettier coc-rust-analyzer
 " There is a problem with coc-svelte, you should install :
 "cd ~/.config/coc/extensions/node_modules/coc-svelte
 "npm i -D typescript

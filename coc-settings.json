@@ -12,7 +12,8 @@
     "python",
     "yaml",
     "go",
-    "typescript"
+    "typescript",
+    "rust"
   ],
   "snippets.ultisnips.directories": ["UltiSnips", "~/.config/nvim/utils/snips"],
   "coc.preferences.extensionUpdateCheck": "daily"
