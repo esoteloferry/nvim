@@ -41,3 +41,6 @@ nnoremap <Leader>, :FloatermToggle<CR>./testrun<CR>
 " Close all other buffers
 " noremap <Leader>o :w\|%bd\|e#<CR>
 noremap <silent><Leader>o :w\|%bd\|e#\|bd#\|normal `"<CR>
+
+" Shortcut to vsplit
+nnoremap <Leader>v :vs<CR>
