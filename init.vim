@@ -18,8 +18,10 @@ source ~/.config/nvim/plug-config/coc.vim
 " There is a problem with coc-svelte, you should install :
 "cd ~/.config/coc/extensions/node_modules/coc-svelte
 "npm i -D typescript
+"Lightline
+source ~/.config/nvim/themes/lightline.vim
 "Airline
-source ~/.config/nvim/themes/airline.vim
+" source ~/.config/nvim/themes/airline.vim
 "Sneak
 source ~/.config/nvim/plug-config/sneak.vim
 "Floaterm
