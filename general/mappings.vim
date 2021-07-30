@@ -44,3 +44,18 @@ noremap <silent><Leader>o :w\|%bd\|e#\|bd#\|normal `"<CR>
 
 " Shortcut to vsplit
 nnoremap <Leader>v :vs<CR>
+
+" Keeping it centered
+nnoremap n nzzzv
+nnoremap * *zzzv
+nnoremap N Nzzzv
+nnoremap # #zzzv
+nnoremap J mzJ`z
+
+" Undo break points
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ) )<c-g>u
+inoremap ! !<c-g>u
+inoremap ? ?<c-g>u
+
