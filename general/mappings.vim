@@ -59,3 +59,10 @@ inoremap ) )<c-g>u
 inoremap ! !<c-g>u
 inoremap ? ?<c-g>u
 
+" Surround
+vnoremap <leader>' <esc>`>a'<esc>`<i'<esc>
+vnoremap <leader>" <esc>`>a"<esc>`<i"<esc>
+vnoremap <leader>( <esc>`>a)<esc>`<i(<esc>
+vnoremap <leader>[ <esc>`>a]<esc>`<i[<esc>
+vnoremap <leader>{ <esc>`>a}<esc>`<i{<esc>
+
