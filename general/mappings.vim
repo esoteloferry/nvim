@@ -59,3 +59,5 @@ inoremap ) )<c-g>u
 inoremap ! !<c-g>u
 inoremap ? ?<c-g>u
 
+" git mappings
+nnoremap gp :Git push<CR>
