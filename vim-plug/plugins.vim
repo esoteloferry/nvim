@@ -1,4 +1,4 @@
-call plug#begin('~/.config/nvim/autoload/plugged')
+call plug#begin('~/.config/nvim/plugged')
   " Better Syntax Support
   "Plug 'sheerun/vim-polyglot'
   " File Explorer
@@ -39,5 +39,4 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " Plug 'prettier/vim-prettier', {
   "   \ 'do': 'npm install'
   "   \ }
-  call plug#end()
-
+call plug#end()
