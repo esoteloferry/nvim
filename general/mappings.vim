@@ -59,6 +59,7 @@ inoremap ) )<c-g>u
 inoremap ! !<c-g>u
 inoremap ? ?<c-g>u
 
+nnoremap gp :Git push<CR>
 " Surround
 vnoremap <leader>' <esc>`>a'<esc>`<i'<esc>
 vnoremap <leader>" <esc>`>a"<esc>`<i"<esc>
