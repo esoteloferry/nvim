@@ -37,7 +37,7 @@ nnoremap <silent> <Space>r zr
 nnoremap <silent> <Space>m zm
 " Test & run any code (for that tetrun is a bash containing the commands you
 " use to test, or test and run, or just run the code you are working on)
-nnoremap <Leader>, :FloatermToggle<CR>./testrun<CR>
+nnoremap <Leader>, :FloatermToggle<CR>./testrun.sh<CR>
 " Close all other buffers
 " noremap <Leader>o :w\|%bd\|e#<CR>
 noremap <silent><Leader>o :w\|%bd\|e#\|bd#\|normal `"<CR>
@@ -59,5 +59,10 @@ inoremap ) )<c-g>u
 inoremap ! !<c-g>u
 inoremap ? ?<c-g>u
 
-" git mappings
-nnoremap gp :Git push<CR>
+" Surround
+vnoremap <leader>' <esc>`>a'<esc>`<i'<esc>
+vnoremap <leader>" <esc>`>a"<esc>`<i"<esc>
+vnoremap <leader>( <esc>`>a)<esc>`<i(<esc>
+vnoremap <leader>[ <esc>`>a]<esc>`<i[<esc>
+vnoremap <leader>{ <esc>`>a}<esc>`<i{<esc>
+
