@@ -10,3 +10,12 @@ The terminal should use the font with the added glyphs.
 
 - Mac
 1. brew cask install font-hack-nerd-font
+
+
+# Installation 
+
+1. Clone
+2. Copy all contents into ~/.config/nvim (create if not exist)
+3. Install nodejs, python3 
+4. Install vim-plug (link)[https://github.com/junegunn/vim-plug#usage]
+5. Open in any folder and run :PlugInstall
