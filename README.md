@@ -19,6 +19,9 @@ The terminal should use the font with the added glyphs.
 3. Install nodejs, python3 
 4. Install vim-plug (link)[https://github.com/junegunn/vim-plug#usage]
 5. Open in any folder and run :PlugInstall
+6. Coc extensions 
+:CocInstall coc-json coc-pyright coc-snippets coc-vimlsp coc-tsserver coc-yaml coc-go coc-svelte coc-prettier coc-rust-analyzer
+
 
 # Nerd-Font
 
