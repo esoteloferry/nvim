@@ -10,3 +10,30 @@ The terminal should use the font with the added glyphs.
 
 - Mac
 1. brew cask install font-hack-nerd-font
+
+
+# Installation 
+
+1. Clone
+2. Copy all contents into ~/.config/nvim (create if not exist)
+3. Install nodejs, python3 
+4. Install vim-plug (link)[https://github.com/junegunn/vim-plug#usage]
+5. Open in any folder and run :PlugInstall
+6. Coc extensions 
+:CocInstall coc-json coc-pyright coc-snippets coc-vimlsp coc-tsserver coc-yaml coc-go coc-svelte coc-prettier coc-rust-analyzer
+
+
+# Nerd-Font
+
+https://github.com/ryanoasis/vim-devicons
+
+Install (Ubuntu)
+
+1. Download the font
+mkdir -p ~/.local/share/fonts
+cd ~/.local/share/fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete.otf
+
+2. Install Font Manager sudo apt install font-manager
+3. Open in Gui mode the font-manager
+4. Add the downloaded font
+5. Ready!
