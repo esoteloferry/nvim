@@ -8,9 +8,9 @@
     "javascript",
     "html",
     "yaml",
+    "yml",
     "json",
     "python",
-    "yaml",
     "go",
     "typescript",
     "rust",
@@ -18,5 +18,14 @@
   ],
   "snippets.ultisnips.directories": ["UltiSnips", "~/.config/nvim/utils/snips"],
   "coc.preferences.extensionUpdateCheck": "daily",
-  "svelte.enable-ts-plugin": true
+  "svelte.enable-ts-plugin": true,
+  "languageserver": {
+    "terraform": {
+      "command": "terraform-ls",
+      "args": ["serve"],
+      "filetypes": ["terraform", "tf"],
+      "initializationOptions": {},
+      "settings": {}
+    }
+  }
 }
