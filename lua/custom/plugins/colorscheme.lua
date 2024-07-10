@@ -1,4 +1,6 @@
 return {
+
+  { 'EdenEast/nightfox.nvim', priority = 1004 },
   {
     'craftzdog/solarized-osaka.nvim',
     lazy = true,
@@ -12,7 +14,7 @@ return {
 
   {
     'ellisonleao/gruvbox.nvim',
-    priority = 1001,
+    priority = 1003,
     lazy = false,
     config = function()
       -- vim.cmd.colorscheme 'gruvbox'
@@ -31,7 +33,7 @@ return {
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'tokyonight-night'
+      vim.cmd.colorscheme 'carbonfox'
 
       -- You can configure highlights by doing something like
       vim.cmd.hi 'Comment gui=none'

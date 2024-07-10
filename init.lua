@@ -11,14 +11,14 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
+  { 'jghauser/mkdir.nvim' },
   {
     'numToStr/Comment.nvim',
-    opts = {
-      toggler = {
-        line = '<leader>h',
-        block = '<leader>h',
-      },
-    },
+  },
+  {
+    'luckasRanarison/tailwind-tools.nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    opts = {}, -- your configuration
   },
 
   { -- Highlight, edit, and navigate code
@@ -39,9 +39,6 @@ require('lazy').setup({
       require('nvim-treesitter.configs').setup(opts)
     end,
   },
-
-  -- Highlight todo, notes, etc in comments
-  { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
   { import = 'custom.plugins' },
 }, {

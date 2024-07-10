@@ -28,23 +28,23 @@ return {
       harpoon:setup {}
 
       -- keymaps
-      vim.keymap.set('n', '<leader>n', function()
+      vim.keymap.set('n', '<leader>h', function()
         harpoon:list():add()
       end)
-      vim.keymap.set('n', '<leader>e', function()
+      vim.keymap.set('n', '<leader>hh', function()
         harpoon.ui:toggle_quick_menu(harpoon:list())
       end)
 
-      vim.keymap.set('n', '<A-n>', function()
+      vim.keymap.set('n', '<Space>n', function()
         harpoon:list():select(1)
       end)
-      vim.keymap.set('n', '<A-e>', function()
+      vim.keymap.set('n', '<Space>e', function()
         harpoon:list():select(2)
       end)
-      vim.keymap.set('n', '<A-o>', function()
+      vim.keymap.set('n', '<Space>o', function()
         harpoon:list():select(3)
       end)
-      vim.keymap.set('n', '<A-i>', function()
+      vim.keymap.set('n', '<Space>i', function()
         harpoon:list():select(4)
       end)
 

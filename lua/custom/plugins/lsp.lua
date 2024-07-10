@@ -132,6 +132,12 @@ return {
         pyright = {},
         rust_analyzer = {},
         tsserver = {},
+        html = {},
+        svelte = {},
+        terraformls = {},
+        templ = {},
+        htmx = {},
+        tailwindcss = {},
 
         lua_ls = {
           -- cmd = {...},
@@ -169,6 +175,22 @@ return {
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
             require('lspconfig')[server_name].setup(server)
           end,
+        },
+      }
+
+      -- Override setup
+      require('lspconfig').htmx.setup {
+        filetypes = { 'html', 'templ' },
+      }
+
+      require('lspconfig').tailwindcss.setup {
+        filetypes = { 'templ', 'astro', 'javascript', 'typescript', 'react' },
+        settings = {
+          tailwindCSS = {
+            includeLanguages = {
+              templ = 'html',
+            },
+          },
         },
       }
     end,
