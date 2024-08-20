@@ -26,6 +26,7 @@ vim.opt.showmode = false
 vim.opt.clipboard = 'unnamedplus'
 
 -- Enable break indent
+vim.opt.linebreak = true
 vim.opt.breakindent = true
 
 -- Save undo history
