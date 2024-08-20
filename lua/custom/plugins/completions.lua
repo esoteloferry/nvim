@@ -1,30 +1,4 @@
 return {
-
-  {
-    'L3MON4D3/LuaSnip',
-    event = 'VeryLazy',
-    dependencies = {
-      'rafamadriz/friendly-snippets',
-      'saadparwaiz1/cmp_luasnip',
-    },
-    config = function()
-      require('luasnip.loaders.from_lua').load { paths = { vim.fn.stdpath 'config' .. '/lua/snippets' } }
-
-      local ls = require 'luasnip'
-      vim.keymap.set({ 'i', 's' }, '<c-k>', function()
-        ls.jump(1)
-      end, { silent = true })
-      vim.keymap.set({ 'i', 's' }, '<c-j>', function()
-        ls.jump(-1)
-      end, { silent = true })
-
-      -- vim.keymap.set({ 'i', 's' }, '<C-E>', function()
-      --   if ls.choice_active() then
-      --     ls.change_choice(1)
-      --   end
-      -- end, { silent = true })
-    end,
-  },
   {
     'hrsh7th/nvim-cmp',
     event = 'VeryLazy',
@@ -37,7 +11,31 @@ return {
       'hrsh7th/cmp-nvim-lsp-signature-help',
       'luckasRanarison/tailwind-tools.nvim',
       'onsails/lspkind.nvim', -- vs-code like pictograms
-      'L3MON4D3/LuaSnip',
+      {
+        'L3MON4D3/LuaSnip',
+        event = 'VeryLazy',
+        dependencies = {
+          'rafamadriz/friendly-snippets',
+          'saadparwaiz1/cmp_luasnip',
+        },
+        config = function()
+          require('luasnip.loaders.from_lua').load { paths = { vim.fn.stdpath 'config' .. '/lua/snippets' } }
+
+          local ls = require 'luasnip'
+          vim.keymap.set({ 'i', 's' }, '<c-k>', function()
+            ls.jump(1)
+          end, { silent = true })
+          vim.keymap.set({ 'i', 's' }, '<c-j>', function()
+            ls.jump(-1)
+          end, { silent = true })
+
+          -- vim.keymap.set({ 'i', 's' }, '<C-E>', function()
+          --   if ls.choice_active() then
+          --     ls.change_choice(1)
+          --   end
+          -- end, { silent = true })
+        end,
+      },
     },
     config = function()
       local cmp = require 'cmp'
@@ -45,15 +43,9 @@ return {
       local luasnip = require 'luasnip'
       luasnip.config.setup {}
 
-      local lspkind = require 'lspkind'
-      lspkind.init {
-        preset = 'default',
-      }
-
       require('luasnip.loaders.from_vscode').lazy_load()
 
       cmp.setup {
-        experimental = { ghost_text = true },
         snippet = {
           expand = function(args)
             require('luasnip').lsp_expand(args.body)
@@ -86,8 +78,8 @@ return {
         },
 
         sources = cmp.config.sources {
-          { name = 'nvim_lsp_signature_help' },
           { name = 'nvim_lsp' },
+          { name = 'nvim_lsp_signature_help' },
           { name = 'luasnip' }, -- For luasnip users.
           { name = 'path' },
           { name = 'buffer' },
@@ -101,7 +93,7 @@ return {
 
         -- configure lspkind for vs-code like pictograms in completion menu
         formatting = {
-          format = lspkind.cmp_format {
+          format = require('lspkind').cmp_format {
             before = require('tailwind-tools.cmp').lspkind_format,
             maxwidth = 50,
             ellipsis_char = '...',
