@@ -127,17 +127,24 @@ return {
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        clangd = {},
+        clangd = {
+          -- cmd = { 'clangd', '--background-index', '--compile-commands-dir=build/' },
+          -- root_dir = lsp.util.root_pattern('build/compile_commands.json', '.git'),
+        },
         gopls = {},
         pyright = {},
         rust_analyzer = {},
-        tsserver = {},
+        eslint = {},
+        stylelint = {},
+        sqlls = {},
         html = {},
+        emmet_ls = {},
         svelte = {},
         terraformls = {},
         templ = {},
         htmx = {},
         tailwindcss = {},
+        ts_ls = {},
 
         lua_ls = {
           -- cmd = {...},
@@ -162,6 +169,7 @@ return {
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
+        'eslint',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -179,9 +187,45 @@ return {
       }
 
       -- Override setup
+      -- require('lspconfig').sqls.setup {
+      --   on_attach = function(client, bufnr)
+      --     require('sqls').on_attach(client, bufnr) -- require sqls.nvim
+      --   end,
+      --   settings = {
+      --     sqls = {
+      --       connections = {
+      --         {
+      --           driver = 'postgresql',
+      --           dataSourceName = 'host=127.0.0.1 port=5445 user=postgres password=123 dbname=app sslmode=disable',
+      --         },
+      --       },
+      --     },
+      --   },
+      -- }
+
+      vim.filetype.add { extension = { templ = 'templ' } }
+
+      require('lspconfig').sqlls.setup {}
+      require('lspconfig').templ.setup {}
+
+      require('lspconfig').emmet_ls.setup {
+        filetypes = { 'html', 'templ' },
+      }
+      require('lspconfig').html.setup {
+        filetypes = { 'html', 'templ' },
+      }
       require('lspconfig').htmx.setup {
         filetypes = { 'html', 'templ' },
       }
+
+      -- require('lspconfig').ts_ls.setup {
+      --   filetypes = { 'html', 'templ' },
+      --   settings = {
+      --     implicitProjectConfiguration = {
+      --       checkJs = true,
+      --     },
+      --   },
+      -- }
 
       require('lspconfig').tailwindcss.setup {
         filetypes = { 'templ', 'astro', 'javascript', 'typescript', 'react' },
@@ -193,6 +237,10 @@ return {
           },
         },
       }
+
+      -- require('lspconfig').clangd.setup {
+      --   root_dir = require('lspconfig').util.root_pattern('build/compile_commands.json', '.git'),
+      -- }
     end,
   },
 }

@@ -9,12 +9,84 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
+  'github/copilot.vim',
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
+  -- 'nanotee/sqls.nvim',
   { 'jghauser/mkdir.nvim' },
   {
     'numToStr/Comment.nvim',
   },
+  {
+    'kylechui/nvim-surround',
+    version = '*', -- Use for stability; omit to use `main` branch for the latest features
+    event = 'VeryLazy',
+    config = function()
+      require('nvim-surround').setup {
+        -- Configuration here, or leave empty to use defaults
+      }
+    end,
+  },
+  {
+    'mattn/emmet-vim',
+    config = function()
+      vim.g.user_emmet_install_global = 0
+      --TODO: add emmet to templ
+      -- require('emmet').setup {
+      --
+      -- filetypes = { 'html', 'css', 'templ', 'jsx', 'tsx' },
+      -- }
+      --   vim.g.emm
+      -- autocmd FileType html,css,templ,jsx,tsx EmmetInstall
+    end,
+  },
+  {
+    'olrtg/nvim-emmet',
+    config = function()
+      vim.keymap.set({ 'n', 'v' }, '<leader>xe', require('nvim-emmet').wrap_with_abbreviation)
+    end,
+  },
+  -- {
+  --   'rcarriga/nvim-notify',
+  --   config = function()
+  --     require('notify').setup {
+  --       background_colour = '#000000',
+  --       enabled = false,
+  --     }
+  --   end,
+  -- },
+
+  -- {
+  --   'folke/noice.nvim',
+  --   config = function()
+  --     require('noice').setup {
+  --       -- add any options here
+  --       routes = {
+  --         {
+  --           filter = {
+  --             event = 'msg_show',
+  --             any = {
+  --               { find = '%d+L, %d+B' },
+  --               { find = '; after #%d+' },
+  --               { find = '; before #%d+' },
+  --               { find = '%d fewer lines' },
+  --               { find = '%d more lines' },
+  --             },
+  --           },
+  --           opts = { skip = true },
+  --         },
+  --       },
+  --     }
+  --   end,
+  --   dependencies = {
+  --     -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+  --     'MunifTanjim/nui.nvim',
+  --     -- OPTIONAL:
+  --     --   `nvim-notify` is only needed, if you want to use the notification view.
+  --     --   If not available, we use `mini` as the fallback
+  --     -- 'rcarriga/nvim-notify',
+  --   },
+  -- },
   {
     'luckasRanarison/tailwind-tools.nvim',
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
