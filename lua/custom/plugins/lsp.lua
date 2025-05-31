@@ -131,7 +131,16 @@ return {
           -- cmd = { 'clangd', '--background-index', '--compile-commands-dir=build/' },
           -- root_dir = lsp.util.root_pattern('build/compile_commands.json', '.git'),
         },
-        gopls = {},
+        gopls = {
+          -- 🔧 This is crucial to fix undefined C.<symbol> issues
+          -- We explicitly set CGO-related env vars for gopls
+          capabilities = capabilities,
+          root_dir = require('lspconfig').util.root_pattern('go.work', 'go.mod', '.git'),
+          env = {
+            CGO_ENABLED = '1',
+            GOFLAGS = '-tags=cgo',
+          },
+        },
         pyright = {},
         rust_analyzer = {},
         eslint = {},
