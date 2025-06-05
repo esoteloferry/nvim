@@ -1,8 +1,19 @@
 return {
-  'olimorris/persisted.nvim',
-  config = function()
-    require('persisted').setup {
-      autoload = true,
-    }
-  end,
+
+  'rmagatti/auto-session',
+  lazy = false,
+
+  ---enables autocomplete for opts
+  ---@module "auto-session"
+  ---@type AutoSession.Config
+  opts = {
+    -- suppressed_dirs = { '~/', '~/Projects', '~/Downloads', '/' },
+    -- log_level = 'debug',
+  },
+  -- 'olimorris/persisted.nvim',
+  -- config = function()
+  --   require('persisted').setup {
+  --     autoload = true,
+  --   }
+  -- end,
 }
