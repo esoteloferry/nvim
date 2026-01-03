@@ -1,4 +1,5 @@
 return {
+
   { -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
     dependencies = {
@@ -134,26 +135,27 @@ return {
         gopls = {
           -- 🔧 This is crucial to fix undefined C.<symbol> issues
           -- We explicitly set CGO-related env vars for gopls
-          capabilities = capabilities,
           root_dir = require('lspconfig').util.root_pattern('go.work', 'go.mod', '.git'),
-          env = {
-            CGO_ENABLED = '1',
-            GOFLAGS = '-tags=cgo',
-          },
+          -- env = {
+          --   CGO_ENABLED = '1',
+          --   GOFLAGS = '-tags=cgo',
+          -- },
         },
+        biome = {},
         pyright = {},
         rust_analyzer = {},
         eslint = {},
         stylelint = {},
         sqlls = {},
         html = {},
-        emmet_ls = {},
+        -- emmet_ls = {},
         svelte = {},
         terraformls = {},
+        -- htmx = {},
         templ = {},
-        htmx = {},
         tailwindcss = {},
         ts_ls = {},
+        -- tsserver = {},
 
         lua_ls = {
           -- cmd = {...},
@@ -163,6 +165,9 @@ return {
             Lua = {
               completion = {
                 callSnippet = 'Replace',
+              },
+              diagnostics = {
+                globals = { 'vim' },
               },
               -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
               -- diagnostics = { disable = { 'missing-fields' } },
@@ -179,8 +184,18 @@ return {
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
         'eslint',
+        'eslint_d',
+        'clangd',
+        'prettierd',
+        'goimports',
+        'goimports-reviser',
+        'gofumpt',
+        'golines',
+        'gopls',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+
+      vim.filetype.add { extension = { templ = 'templ' } }
 
       require('mason-lspconfig').setup {
         handlers = {
@@ -191,6 +206,32 @@ return {
             -- certain features of an LSP (for example, turning off formatting for tsserver)
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
             require('lspconfig')[server_name].setup(server)
+          end,
+          -- tailwindcss
+          tailwindcss = function()
+            require('lspconfig').tailwindcss.setup {
+              capabilities = capabilities,
+              filetypes = { 'templ', 'astro', 'javascript', 'typescript', 'react' },
+              init_options = { userLanguages = { templ = 'html' } },
+            }
+          end,
+          html = function()
+            require('lspconfig').html.setup {
+              capabilities = capabilities,
+              filetypes = { 'html', 'templ' },
+            }
+          end,
+          -- htmx = function()
+          --   require('lspconfig').htmx.setup {
+          --     capabilities = capabilities,
+          --     filetypes = { 'html', 'templ' },
+          --   }
+          -- end,
+          templ = function()
+            require('lspconfig').templ.setup {
+              capabilities = capabilities,
+              filetypes = { 'templ' },
+            }
           end,
         },
       }
@@ -212,21 +253,36 @@ return {
       --   },
       -- }
 
-      vim.filetype.add { extension = { templ = 'templ' } }
+      -- require('lspconfig').sqlls.setup {}
 
-      require('lspconfig').sqlls.setup {}
-      require('lspconfig').templ.setup {}
-
-      require('lspconfig').emmet_ls.setup {
-        filetypes = { 'html', 'templ' },
-      }
-      require('lspconfig').html.setup {
-        filetypes = { 'html', 'templ' },
-      }
-      require('lspconfig').htmx.setup {
-        filetypes = { 'html', 'templ' },
-      }
-
+      -- require('lspconfig').emmet_ls.setup {
+      --   filetypes = { 'html', 'templ' },
+      -- }
+      --
+      --
+      --
+      --
+      -- require('lspconfig').tailwindcss.setup {
+      --   filetypes = { 'templ', 'astro', 'javascript', 'typescript', 'react' },
+      --   settings = {
+      --     tailwindCSS = {
+      --       includeLanguages = {
+      --         templ = 'html',
+      --       },
+      --     },
+      --   },
+      -- }
+      -- require('lspconfig').html.setup {
+      --   filetypes = { 'html', 'templ' },
+      -- }
+      -- require('lspconfig').htmx.setup {
+      --   filetypes = { 'html', 'templ' },
+      -- }
+      --
+      -- require('lspconfig').templ.setup {}
+      --
+      --
+      --
       -- require('lspconfig').ts_ls.setup {
       --   filetypes = { 'html', 'templ' },
       --   settings = {
@@ -235,16 +291,34 @@ return {
       --     },
       --   },
       -- }
-
-      require('lspconfig').tailwindcss.setup {
-        filetypes = { 'templ', 'astro', 'javascript', 'typescript', 'react' },
-        settings = {
-          tailwindCSS = {
-            includeLanguages = {
-              templ = 'html',
-            },
-          },
-        },
+      --
+      --
+      local function organize_imports()
+        local params = {
+          command = '_typescript.organizeImports',
+          arguments = { vim.api.nvim_buf_get_name(0) },
+          title = '',
+        }
+        vim.lsp.buf.execute_command(params)
+      end
+      --
+      require('lspconfig').ts_ls.setup {
+        filetypes = { 'typescript', 'typescriptreact', 'typescript.tsx' },
+        cmd = { 'typescript-language-server', '--stdio' },
+        -- on_attach = function(client, bufnr)
+        --   client.server_capabilities.documentFormattingProvider = false
+        --   vim.api.nvim_create_autocmd('BufWritePre', {
+        --     buffer = bufnr,
+        --     command = 'OrganizeImports',
+        --   })
+        -- end,
+        -- commands = {
+        --   OrganizeImports = {
+        --     organize_imports,
+        --     description = 'Organize Imports',
+        --   },
+        -- },
+        -- single_file_support = false,
       }
 
       -- require('lspconfig').clangd.setup {

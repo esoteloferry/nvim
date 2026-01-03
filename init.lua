@@ -27,25 +27,25 @@ require('lazy').setup({
       }
     end,
   },
-  {
-    'mattn/emmet-vim',
-    config = function()
-      vim.g.user_emmet_install_global = 0
-      --TODO: add emmet to templ
-      -- require('emmet').setup {
-      --
-      -- filetypes = { 'html', 'css', 'templ', 'jsx', 'tsx' },
-      -- }
-      --   vim.g.emm
-      -- autocmd FileType html,css,templ,jsx,tsx EmmetInstall
-    end,
-  },
-  {
-    'olrtg/nvim-emmet',
-    config = function()
-      vim.keymap.set({ 'n', 'v' }, '<leader>xe', require('nvim-emmet').wrap_with_abbreviation)
-    end,
-  },
+  -- {
+  --   'mattn/emmet-vim',
+  --   config = function()
+  --     vim.g.user_emmet_install_global = 0
+  --     --TODO: add emmet to templ
+  --     -- require('emmet').setup {
+  --     --
+  --     -- filetypes = { 'html', 'css', 'templ', 'jsx', 'tsx' },
+  --     -- }
+  --     --   vim.g.emm
+  --     -- autocmd FileType html,css,templ,jsx,tsx EmmetInstall
+  --   end,
+  -- },
+  -- {
+  --   'olrtg/nvim-emmet',
+  --   config = function()
+  --     vim.keymap.set({ 'n', 'v' }, '<leader>xe', require('nvim-emmet').wrap_with_abbreviation)
+  --   end,
+  -- },
   -- {
   --   'rcarriga/nvim-notify',
   --   config = function()
@@ -97,12 +97,32 @@ require('lazy').setup({
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc', 'javascript', 'typescript' },
+      ensure_installed = {
+        'bash',
+        'c',
+        'diff',
+        'html',
+        'lua',
+        'luadoc',
+        'markdown',
+        'vim',
+        'vimdoc',
+        'javascript',
+        'typescript',
+        'templ',
+        'go',
+        'tsx',
+        'css',
+        'html',
+      },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
         enable = true,
         additional_vim_regex_highlighting = false,
+      },
+      autotag = {
+        enable = true,
       },
     },
     config = function(_, opts)
