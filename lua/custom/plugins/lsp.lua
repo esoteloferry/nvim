@@ -142,7 +142,16 @@ return {
           -- },
         },
         biome = {},
-        pyright = {},
+        pyright = {
+          before_init = function(_, config)
+            local venv = vim.fn.finddir('.venv', vim.fn.getcwd() .. ';')
+            if venv ~= '' then
+              config.settings = vim.tbl_deep_extend('force', config.settings or {}, {
+                python = { pythonPath = venv .. '/bin/python' },
+              })
+            end
+          end,
+        },
         rust_analyzer = {},
         eslint = {},
         stylelint = {},
