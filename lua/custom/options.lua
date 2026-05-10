@@ -36,6 +36,7 @@ vim.opt.undofile = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
+vim.opt.background = 'light'
 -- Keep signcolumn on by default
 vim.opt.signcolumn = 'yes'
 
