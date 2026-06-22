@@ -214,30 +214,30 @@ return {
             -- by the server configuration above. Useful when disabling
             -- certain features of an LSP (for example, turning off formatting for tsserver)
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-            require('lspconfig')[server_name].setup(server)
+            vim.lsp.config[server_name].setup(server)
           end,
           -- tailwindcss
           tailwindcss = function()
-            require('lspconfig').tailwindcss.setup {
+            vim.lsp.config.tailwindcss.setup {
               capabilities = capabilities,
               filetypes = { 'templ', 'astro', 'javascript', 'typescript', 'react' },
               init_options = { userLanguages = { templ = 'html' } },
             }
           end,
           html = function()
-            require('lspconfig').html.setup {
+            vim.lsp.config.html.setup {
               capabilities = capabilities,
               filetypes = { 'html', 'templ' },
             }
           end,
           -- htmx = function()
-          --   require('lspconfig').htmx.setup {
+          --   vim.lsp.config.htmx.setup {
           --     capabilities = capabilities,
           --     filetypes = { 'html', 'templ' },
           --   }
           -- end,
           templ = function()
-            require('lspconfig').templ.setup {
+            vim.lsp.config.templ.setup {
               capabilities = capabilities,
               filetypes = { 'templ' },
             }
@@ -246,7 +246,7 @@ return {
       }
 
       -- Override setup
-      -- require('lspconfig').sqls.setup {
+      -- vim.lsp.config.sqls.setup {
       --   on_attach = function(client, bufnr)
       --     require('sqls').on_attach(client, bufnr) -- require sqls.nvim
       --   end,
@@ -262,16 +262,16 @@ return {
       --   },
       -- }
 
-      -- require('lspconfig').sqlls.setup {}
+      -- vim.lsp.config.sqlls.setup {}
 
-      -- require('lspconfig').emmet_ls.setup {
+      -- vim.lsp.config.emmet_ls.setup {
       --   filetypes = { 'html', 'templ' },
       -- }
       --
       --
       --
       --
-      -- require('lspconfig').tailwindcss.setup {
+      -- vim.lsp.config.tailwindcss.setup {
       --   filetypes = { 'templ', 'astro', 'javascript', 'typescript', 'react' },
       --   settings = {
       --     tailwindCSS = {
@@ -281,18 +281,18 @@ return {
       --     },
       --   },
       -- }
-      -- require('lspconfig').html.setup {
+      -- vim.lsp.config.html.setup {
       --   filetypes = { 'html', 'templ' },
       -- }
-      -- require('lspconfig').htmx.setup {
+      -- vim.lsp.config.htmx.setup {
       --   filetypes = { 'html', 'templ' },
       -- }
       --
-      -- require('lspconfig').templ.setup {}
+      -- vim.lsp.config.templ.setup {}
       --
       --
       --
-      -- require('lspconfig').ts_ls.setup {
+      -- vim.lsp.config.ts_ls.setup {
       --   filetypes = { 'html', 'templ' },
       --   settings = {
       --     implicitProjectConfiguration = {
@@ -311,28 +311,13 @@ return {
         vim.lsp.buf.execute_command(params)
       end
       --
-      require('lspconfig').ts_ls.setup {
-        filetypes = { 'typescript', 'typescriptreact', 'typescript.tsx' },
+      vim.lsp.config('ts_ls', {
         cmd = { 'typescript-language-server', '--stdio' },
-        -- on_attach = function(client, bufnr)
-        --   client.server_capabilities.documentFormattingProvider = false
-        --   vim.api.nvim_create_autocmd('BufWritePre', {
-        --     buffer = bufnr,
-        --     command = 'OrganizeImports',
-        --   })
-        -- end,
-        -- commands = {
-        --   OrganizeImports = {
-        --     organize_imports,
-        --     description = 'Organize Imports',
-        --   },
-        -- },
-        -- single_file_support = false,
-      }
+        filetypes = { 'typescript', 'typescriptreact', 'typescript.tsx' },
+        root_markers = { 'package.json', 'tsconfig.json', '.git' },
+      })
 
-      -- require('lspconfig').clangd.setup {
-      --   root_dir = require('lspconfig').util.root_pattern('build/compile_commands.json', '.git'),
-      -- }
+      vim.lsp.enable 'ts_ls'
     end,
   },
 }

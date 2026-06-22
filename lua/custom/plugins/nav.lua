@@ -6,10 +6,8 @@ return {
     end,
   },
   {
-    'ggandor/leap.nvim',
+    url = 'https://codeberg.org/andyg/leap.nvim',
     config = function()
-      require('leap').set_default_keymaps()
-
       vim.keymap.set({ 'n', 'x', 'o' }, 's', '<Plug>(leap)')
     end,
   },
